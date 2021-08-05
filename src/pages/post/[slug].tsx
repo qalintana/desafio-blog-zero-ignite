@@ -20,6 +20,7 @@ interface Post {
   first_publication_date: string | null;
   data: {
     title: string;
+    subtitle: string;
     banner: {
       url: string;
     };
