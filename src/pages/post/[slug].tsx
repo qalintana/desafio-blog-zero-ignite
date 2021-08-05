@@ -136,8 +136,8 @@ export const getStaticProps: GetStaticProps = async context => {
     uid: response.uid,
     first_publication_date: response.first_publication_date,
     data: {
-      title: response.data.title,
       subtitle: response.data.subtitle,
+      title: response.data.title,
       banner: {
         url: response.data.banner.url,
       },
