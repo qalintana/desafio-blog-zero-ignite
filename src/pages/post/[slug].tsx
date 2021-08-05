@@ -112,7 +112,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const prismic = getPrismicClient();
 
   const postsResponse = await prismic.query([
-    Prismic.predicates.at('document.type', 'post'),
+    Prismic.predicates.at('document.type', 'posts'),
   ]);
 
   const paths = postsResponse.results.map(post => {
@@ -131,7 +131,7 @@ export const getStaticProps: GetStaticProps = async context => {
   const prismic = getPrismicClient();
   const { slug } = context.params;
 
-  const response = await prismic.getByUID('post', String(slug), {});
+  const response = await prismic.getByUID('posts', String(slug), {});
 
   const post = {
     uid: response.uid,
